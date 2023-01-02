@@ -1,0 +1,19 @@
+{
+    "name": "php/types",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Php\\Types\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "José Hélio Veríssimoo Jr",
+            "email": "jose.helio@gmail.com"
+        }
+    ],
+    "require": {}
+}
