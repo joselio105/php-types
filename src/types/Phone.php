@@ -2,11 +2,11 @@
 
 namespace Php\Types\Types;
 
-class Text extends AbstractType
+class Phone extends AbstractType
 {
     public function __construct($value)
     {
-        $this->isBoolean($value);
+        $this->isPhone($value);
 
         $this->value = $value;
     }

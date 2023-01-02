@@ -2,11 +2,11 @@
 
 namespace Php\Types\Types;
 
-class Text extends AbstractType
+class Semester extends AbstractType
 {
     public function __construct($value)
     {
-        $this->isBoolean($value);
+        $this->isSemester($value);
 
         $this->value = $value;
     }
