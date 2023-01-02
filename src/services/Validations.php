@@ -56,7 +56,7 @@ trait Validations
         $pattern = "/(1|2{1})(\d{3})\-{1}(0|1{1})(\d{1})\-{1}(\d{2})/";
         preg_match($pattern, $value, $matches);
 
-        if(!empty($matches)){
+        if(empty($matches)){
             throw new MustBeDateError();
         }
     }
@@ -66,27 +66,27 @@ trait Validations
         $pattern = "/(1|2{1})(\d{3})\-{1}(1|2{1})/";
         preg_match($pattern, $value, $matches);
 
-        if(!empty($matches)){
+        if(empty($matches)){
             throw new MustBeSemesterError();
         }
     }
 
     public function isPhone($value): void
     {
-        $pattern = "/(\+\d{2,3})?\(?(\d{2,3})\)?\s?\d{4,5}(\s|\-)?\d{4}/";
+        $pattern = "/^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$/";
         preg_match($pattern, $value, $matches);
 
-        if(!empty($matches)){
+        if(empty($matches)){
             throw new MustBePhoneError();
         }
     }
 
     public function isEmail($value): void
     {
-        $pattern = "/.+\@.+\..+/";
+        $pattern = "/(.+)\@{1}(.+\..+)/";
         preg_match($pattern, $value, $matches);
-
-        if(!empty($matches)){
+        
+        if(empty($matches)){
             throw new MustBeEmailError();
         }
     }
@@ -96,17 +96,17 @@ trait Validations
         $pattern = "/^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$/";
         preg_match($pattern, $value, $matches);
 
-        if(!empty($matches)){
+        if(empty($matches)){
             throw new MustBeUrlError();
         }
     }
 
     public function isUrlLattes($value): void
     {
-        $pattern = "/(http://lattes.cnpq.br/{1})(\d{16})/";
+        $pattern = "/(http\:\/\/lattes.cnpq.br\/{1})(\d{16})/";
         preg_match($pattern, $value, $matches);
 
-        if(!empty($matches)){
+        if(empty($matches)){
             throw new MustBeLattesUrlError();
         }
     }

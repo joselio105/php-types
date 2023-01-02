@@ -2,7 +2,7 @@
 
 namespace Php\Types\Types;
 
-class Text extends AbstractType
+class Boolean extends AbstractType
 {
     public function __construct($value)
     {
